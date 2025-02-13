@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Click the Heart ❤️</h1>
+        <button id="loveButton" class="heart-button">❤️</button>
+        <div id="message" class="hidden">Happy Valentine Beb! 😍💖</div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+        const button = document.getElementById('loveButton');
+        const message = document.getElementById('message');
+
+        button.addEventListener('click', () => {
+            clickCount++;
+            
+            // Membesar tombol
+            button.style.transform = `scale(${1 + clickCount * 0.2})`;
+            
+            if(clickCount === 10) {
+                button.classList.add('hidden');
+                message.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
