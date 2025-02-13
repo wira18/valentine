@@ -47,11 +47,8 @@
     .happy-valentine {
       animation: blink 1s infinite;
     }
-    /* Style untuk video */
-    #loveVideo {
-      margin-top: 20px;
-      max-width: 100%;
-      height: auto;
+    /* Sembunyikan player audio */
+    #loveAudio {
       display: none;
     }
   </style>
@@ -60,18 +57,18 @@
   <div class="container">
     <h1 id="title">Click the Heart ❤️</h1>
     <button id="loveButton" class="heart-button">❤️</button>
-    <!-- Elemen video untuk file MP4 -->
-    <video id="loveVideo" controls>
-      <source src="love.mp4" type="video/mp4">
-      Browser kamu tidak mendukung video.
-    </video>
+    <!-- Gunakan elemen audio untuk file mp4 (pastikan file tersebut mengandung audio) -->
+    <audio id="loveAudio">
+      <source src="love.mp4" type="audio/mp4">
+      Browser kamu tidak mendukung pemutaran audio.
+    </audio>
   </div>
 
   <script>
     let clickCount = 0;
     const button = document.getElementById('loveButton');
     const title = document.getElementById('title');
-    const video = document.getElementById('loveVideo');
+    const audio = document.getElementById('loveAudio');
 
     button.addEventListener('click', () => {
       clickCount++;
@@ -83,8 +80,8 @@
         title.innerText = "Happy Valentine Bebeb! 😍💖";
         title.classList.add('happy-valentine');
         button.classList.add('hidden');
-        video.style.display = 'block';
-        video.play();
+        // Memainkan audio (auto play karena sudah di-trigger oleh interaksi pengguna)
+        audio.play();
       }
     });
   </script>
