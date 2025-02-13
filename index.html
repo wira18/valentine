@@ -9,15 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Click the Heart ❤️</h1>
+        <h1 id="title">Click the Heart ❤️</h1>
         <button id="loveButton" class="heart-button">❤️</button>
-        <div id="message" class="hidden">Happy Valentine Beb! 😍💖</div>
     </div>
 
     <script>
         let clickCount = 0;
         const button = document.getElementById('loveButton');
-        const message = document.getElementById('message');
+        const title = document.getElementById('title');
 
         button.addEventListener('click', () => {
             clickCount++;
@@ -25,9 +24,9 @@
             // Membesar tombol
             button.style.transform = `scale(${1 + clickCount * 0.2})`;
             
-            if(clickCount === 10) {
+            if (clickCount === 10) {
+                title.innerText = "Happy Valentine Bebeb! 😍💖";
                 button.classList.add('hidden');
-                message.classList.remove('hidden');
             }
         });
     </script>
