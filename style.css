@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff8a8a, #ff6b6b, #ff4d4d);
+    font-family: 'Dancing Script', cursive;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.heart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 4em;
+    transition: all 0.3s ease;
+    color: #ff2b2b;
+    filter: drop-shadow(0 0 10px rgba(255,0,0,0.3));
+}
+
+.heart-button:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: #ff0000;
+}
+
+#message {
+    font-size: 3em;
+    color: white;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: pulse 1.5s infinite;
+    display: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
