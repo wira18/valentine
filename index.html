@@ -1,94 +1,92 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(45deg, #ff8a8a, #ff6b6b, #ff4d4d);
-            font-family: 'Dancing Script', cursive;
-            flex-direction: column;
-        }
-        .container {
-            text-align: center;
-        }
-        h1 {
-            color: white;
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            transition: all 0.5s ease-in-out;
-        }
-        .heart-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 4em;
-            transition: all 0.3s ease;
-            color: #ff2b2b;
-            filter: drop-shadow(0 0 10px rgba(255,0,0,0.3));
-        }
-        .heart-button:hover {
-            transform: scale(1.1) rotate(5deg);
-            color: #ff0000;
-        }
-        .hidden {
-            display: none !important;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .happy-valentine {
-            animation: blink 1s infinite;
-        }
-        /* Style untuk video */
-        #loveVideo {
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(45deg, #ff8a8a, #ff6b6b, #ff4d4d);
+      font-family: 'Dancing Script', cursive;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      color: white;
+      font-size: 3em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      transition: all 0.5s ease-in-out;
+    }
+    .heart-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 4em;
+      transition: all 0.3s ease;
+      color: #ff2b2b;
+      filter: drop-shadow(0 0 10px rgba(255,0,0,0.3));
+    }
+    .heart-button:hover {
+      transform: scale(1.1) rotate(5deg);
+      color: #ff0000;
+    }
+    .hidden {
+      display: none !important;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .happy-valentine {
+      animation: blink 1s infinite;
+    }
+    /* Style untuk video */
+    #loveVideo {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="title">Click the Heart ❤️</h1>
-        <button id="loveButton" class="heart-button">❤️</button>
-        <!-- Video element untuk file MP4 -->
-        <video id="loveVideo" controls>
-            <source src="love.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video.
-        </video>
-    </div>
+  <div class="container">
+    <h1 id="title">Click the Heart ❤️</h1>
+    <button id="loveButton" class="heart-button">❤️</button>
+    <!-- Elemen video untuk file MP4 -->
+    <video id="loveVideo" controls>
+      <source src="love.mp4" type="video/mp4">
+      Browser kamu tidak mendukung video.
+    </video>
+  </div>
 
-    <script>
-        let clickCount = 0;
-        const button = document.getElementById('loveButton');
-        const title = document.getElementById('title');
-        const video = document.getElementById('loveVideo');
+  <script>
+    let clickCount = 0;
+    const button = document.getElementById('loveButton');
+    const title = document.getElementById('title');
+    const video = document.getElementById('loveVideo');
 
-        button.addEventListener('click', () => {
-            clickCount++;
-            
-            // Membesar tombol
-            button.style.transform = `scale(${1 + clickCount * 0.2})`;
-            
-            if (clickCount === 10) {
-                title.innerText = "Happy Valentine Bebeb! 😍💖";
-                title.classList.add('happy-valentine');
-                button.classList.add('hidden');
-                // Menampilkan dan memainkan video
-                video.style.display = 'block';
-                video.play();
-            }
-        });
-    </script>
+    button.addEventListener('click', () => {
+      clickCount++;
+      
+      // Membesar tombol sesuai jumlah klik
+      button.style.transform = `scale(${1 + clickCount * 0.2})`;
+      
+      if (clickCount === 10) {
+        title.innerText = "Happy Valentine Bebeb! 😍💖";
+        title.classList.add('happy-valentine');
+        button.classList.add('hidden');
+        video.style.display = 'block';
+        video.play();
+      }
+    });
+  </script>
 </body>
 </html>
